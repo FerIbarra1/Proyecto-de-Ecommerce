@@ -1,0 +1,19 @@
+{
+  "name": "proyecto-de-ecommerce",
+  "version": "1.0.0",
+  "description": "Practica de Ecommerce Luis Fernando Ibarra Ayala",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Feribarra1.git"
+  },
+  "author": "Luis Fernando Ibarra Ayala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/github.com/Feribarra1/issues"
+  },
+  "homepage": "https://github.com/github.com/Feribarra1#readme"
+}
