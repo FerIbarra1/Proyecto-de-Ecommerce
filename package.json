@@ -4,7 +4,7 @@
   "description": "Practica de Ecommerce Luis Fernando Ibarra Ayala",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build --output public",
+    "build": "cd backend && npm install  && cd ../frontend && npm install && npm run build --output public",
     "start": "node backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,4 +19,3 @@
   },
   "homepage": "https://github.com/github.com/Feribarra1#readme"
 }
-
