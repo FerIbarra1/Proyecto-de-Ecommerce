@@ -87,7 +87,7 @@ function App() {
               </Button>
 
               <LinkContainer to="/">
-                <Navbar.Brand>Ecommerce</Navbar.Brand>
+                <Navbar.Brand>Pasteleria Lorena</Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
@@ -277,7 +277,7 @@ function App() {
           </Container>
         </main>
         <footer>
-          <div className="text-center">Ecommerce - Ibarra Ayala Luis Fernando</div>
+          <div className="text-center">Contacto: Tel. 6621633503 - Lorena Meneses</div>
         </footer>
       </div>
     </BrowserRouter>
