@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Feribarra1.git"
+    "url": "https://github.com/Feribarra1.git"
   },
   "author": "Luis Fernando Ibarra Ayala",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/github.com/Feribarra1/issues"
+    "url": "https://github.com/Feribarra1/issues"
   },
-  "homepage": "https://github.com/github.com/Feribarra1#readme"
+  "homepage": "https://github.com/Feribarra1#readme"
 }
