@@ -87,7 +87,9 @@ function App() {
               </Button>
 
               <LinkContainer to="/">
-                <Navbar.Brand>Pasteleria Lorena</Navbar.Brand>
+                <Navbar.Brand>
+                <img alt="" src='/images/logo2.jpg' width="30" height="30" className="d-inline-block align-top" />
+                 {' '} Pasteleria Lorena</Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
