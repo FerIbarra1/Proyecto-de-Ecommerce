@@ -77,7 +77,7 @@ function App() {
       >
         <ToastContainer position="bottom-center" limit={1} />
         <header>
-          <Navbar bg="dark" variant="dark" expand="lg">
+          <Navbar style={{backgroundColor: '#FFEBCD' }}>
             <Container>
               <Button
                 variant="dark"
@@ -88,8 +88,8 @@ function App() {
 
               <LinkContainer to="/">
                 <Navbar.Brand>
-                <img alt="" src='/images/logo2.jpg' width="30" height="30" className="d-inline-block align-top" />
-                 {' '} Pasteleria Lorena</Navbar.Brand>
+                <img alt="" src='/images/logo3.png' width="120" height="120" className="d-inline-block align-top" />
+                 </Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
