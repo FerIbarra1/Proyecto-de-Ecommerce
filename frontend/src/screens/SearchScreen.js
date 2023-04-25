@@ -140,7 +140,7 @@ export default function SearchScreen() {
           <div>
             <ul>
               <li>
-                <Link
+                <Link style={{textDecoration: 'none', color: "#EA4C89"}}
                   className={'all' === category ? 'text-bold' : ''}
                   to={getFilterUrl({ category: 'all' })}
                 >
@@ -149,7 +149,7 @@ export default function SearchScreen() {
               </li>
               {categories.map((c) => (
                 <li key={c}>
-                  <Link
+                  <Link style={{textDecoration: 'none', color: "#EA4C89"}}
                     className={c === category ? 'text-bold' : ''}
                     to={getFilterUrl({ category: c })}
                   >
@@ -163,7 +163,7 @@ export default function SearchScreen() {
             <h3>Precio</h3>
             <ul>
               <li>
-                <Link
+                <Link style={{textDecoration: 'none', color: "#EA4C89"}}
                   className={'all' === price ? 'text-bold' : ''}
                   to={getFilterUrl({ price: 'all' })}
                 >
@@ -172,7 +172,7 @@ export default function SearchScreen() {
               </li>
               {prices.map((p) => (
                 <li key={p.value}>
-                  <Link
+                  <Link style={{textDecoration: 'none', color: "#EA4C89"}}
                     to={getFilterUrl({ price: p.value })}
                     className={p.value === price ? 'text-bold' : ''}
                   >
@@ -187,7 +187,7 @@ export default function SearchScreen() {
             <ul>
               {ratings.map((r) => (
                 <li key={r.name}>
-                  <Link
+                  <Link style={{textDecoration: 'none'}}
                     to={getFilterUrl({ rating: r.rating })}
                     className={`${r.rating}` === `${rating}` ? 'text-bold' : ''}
                   >
@@ -196,7 +196,7 @@ export default function SearchScreen() {
                 </li>
               ))}
               <li>
-                <Link
+                <Link style={{textDecoration: 'none'}}
                   to={getFilterUrl({ rating: 'all' })}
                   className={rating === 'all' ? 'text-bold' : ''}
                 >
