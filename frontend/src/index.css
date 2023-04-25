@@ -16,8 +16,12 @@ main {
 .btn-outline-primary {
   background-color: #EA4C89;
   color: white;
+  border: 2px solid var(--black);
 }
-.btn-outline-primary:focus{
+.btn-outline-primary:hover{
+  background-color: #F082AC;
+}
+.btn-primary:hover{
   background-color: #F082AC;
 }
 .products {
