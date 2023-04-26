@@ -256,7 +256,7 @@ export default function OrderScreen() {
                           alt={item.name}
                           className="img-fluid rounded img-thumbnail"
                         ></img>{' '}
-                        <Link style={{color: '#EA4C89', textDecoration: 'none'}} to={`/product/${item.slug}`}>{item.name}</Link>
+                        <Link style={{color: 'black', textDecoration: 'none'}} to={`/product/${item.slug}`}>{item.name}</Link>
                       </Col>
                       <Col md={3}>
                         <span>{item.quantity}</span>

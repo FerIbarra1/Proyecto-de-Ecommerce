@@ -142,7 +142,7 @@ orderRouter.put(
         .messages()
         .send(
           {
-            from: 'Ecommerce <ecommerce@mg.yourdomain.com>',
+            from: 'Pasteleria Lorena <Lorena@pastelerialorena.com>',
             to: `${order.user.name} <${order.user.email}>`,
             subject: `Nuevo Pedido ${order._id}`,
             html: payOrderEmailTemplate(order),
