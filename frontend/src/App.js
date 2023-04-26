@@ -77,7 +77,7 @@ function App() {
       >
         <ToastContainer position="bottom-center" limit={1} />
         <header>
-          <Navbar style={{backgroundColor: '#FFEBCD' }}>
+          <Navbar style={{backgroundColor: '#FFEBCD', borderBottomLeftRadius: '10px', borderBottomRightRadius: '10px', borderBottom: 'solid' }}>
             <Container>
               <Button
                 variant="dark"
