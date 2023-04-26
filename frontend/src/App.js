@@ -163,7 +163,7 @@ function App() {
                   to={{ pathname: '/search', search: `category=${category}` }}
                   onClick={() => setSidebarIsOpen(false)}
                 >
-                  <Nav.Link>{category}</Nav.Link>
+                  <Nav.Link style={{color: '#EA4C89'}}>{category}</Nav.Link>
                 </LinkContainer>
               </Nav.Item>
             ))}
