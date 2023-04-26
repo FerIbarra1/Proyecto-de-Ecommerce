@@ -64,8 +64,8 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <div
-        className={
+      <div style={{color: '#EA4C89'}}
+        className={ 
           sidebarIsOpen
             ? fullBox
               ? 'site-container active-cont d-flex flex-column full-box'
