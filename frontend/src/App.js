@@ -159,7 +159,7 @@ function App() {
             </Nav.Item>
             {categories.map((category) => (
               <Nav.Item style={{color: '#EA4C89'}} key={category}>
-                <LinkContainer
+                <LinkContainer style={{color: '#EA4C89'}}
                   to={{ pathname: '/search', search: `category=${category}` }}
                   onClick={() => setSidebarIsOpen(false)}
                 >
