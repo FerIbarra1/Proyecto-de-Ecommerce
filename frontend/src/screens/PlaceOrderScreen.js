@@ -40,7 +40,7 @@ export default function PlaceOrderScreen() {
   cart.itemsPrice = round2(
     cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
   );
-  cart.shippingPrice = cart.itemsPrice > 500 ? round2(0) : round2(100);
+  cart.shippingPrice = cart.itemsPrice >= 500 ? round2(0) : round2(100);
   cart.taxPrice = 0;
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
 
@@ -126,7 +126,7 @@ export default function PlaceOrderScreen() {
                           alt={item.name}
                           className="img-fluid rounded img-thumbnail"
                         ></img>{' '}
-                        <Link style={{color: '#EA4C89', textDecoration: 'none'}} to={`/product/${item.slug}`}>{item.name}</Link>
+                        <Link style={{color: 'black', textDecoration: 'none'}} to={`/product/${item.slug}`}>{item.name}</Link>
                       </Col>
                       <Col md={3}>
                         <span>{item.quantity}</span>
