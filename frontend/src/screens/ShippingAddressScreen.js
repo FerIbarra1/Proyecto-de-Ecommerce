@@ -16,17 +16,20 @@ export default function ShippingAddressScreen() {
   } = state;
   const [fullName, setFullName] = useState(shippingAddress.fullName || '');
   const [address, setAddress] = useState(shippingAddress.address || '');
-  const [city, setCity] = useState(shippingAddress.city || '');
-  const [postalCode, setPostalCode] = useState(
-    shippingAddress.postalCode || ''
-  );
+  const [city, setCity] = useState('Hermosillo');
+  const [celular, setCelular] = useState(shippingAddress.celular || '');
+  const [postalCode, setPostalCode] = useState(123);
   useEffect(() => {
     if (!userInfo) {
       navigate('/signin?redirect=/shipping');
     }
   }, [userInfo, navigate]);
-  const [country, setCountry] = useState(shippingAddress.country || '');
+  const [country, setCountry] = useState('Sonora');
   const submitHandler = (e) => {
+
+    setCity('Hermosillo');
+    setCountry('Sonora');
+    setPostalCode(123);
     e.preventDefault();
     ctxDispatch({
       type: 'SAVE_SHIPPING_ADDRESS',
@@ -34,6 +37,7 @@ export default function ShippingAddressScreen() {
         fullName,
         address,
         city,
+        celular,
         postalCode,
         country,
         location: shippingAddress.location,
@@ -45,6 +49,7 @@ export default function ShippingAddressScreen() {
         fullName,
         address,
         city,
+        celular,
         postalCode,
         country,
         location: shippingAddress.location,
@@ -82,30 +87,39 @@ export default function ShippingAddressScreen() {
               onChange={(e) => setAddress(e.target.value)}
               required
             />
+            <p>Asegúrese que la dirección sea en Hermosillo, Sonora.</p>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="celular">
+            <Form.Label>Celular</Form.Label>
+            <Form.Control
+              value={celular}
+              onChange={(e) => setCelular(e.target.value)}
+              required
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="city">
-            <Form.Label>Ciudad</Form.Label>
+            {/* <Form.Label>Ciudad</Form.Label>
             <Form.Control
               value={city}
               onChange={(e) => setCity(e.target.value)}
               required
-            />
+            /> */}
           </Form.Group>
           <Form.Group className="mb-3" controlId="postalCode">
-            <Form.Label>Código Postal</Form.Label>
+            {/* <Form.Label>Código Postal</Form.Label>
             <Form.Control
               value={postalCode}
               onChange={(e) => setPostalCode(e.target.value)}
               required
-            />
+            /> */}
           </Form.Group>
           <Form.Group className="mb-3" controlId="country">
-            <Form.Label>Estado</Form.Label>
+            {/* <Form.Label>Estado</Form.Label>
             <Form.Control
               value={country}
               onChange={(e) => setCountry(e.target.value)}
               required
-            />
+            /> */}
           </Form.Group>
           {/* <div className="mb-3">
             <Button

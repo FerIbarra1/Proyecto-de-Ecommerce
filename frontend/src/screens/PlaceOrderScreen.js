@@ -40,7 +40,7 @@ export default function PlaceOrderScreen() {
   cart.itemsPrice = round2(
     cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
   );
-  cart.shippingPrice = cart.itemsPrice >= 500 ? round2(0) : round2(100);
+  cart.shippingPrice = cart.itemsPrice >= 300 ? round2(0) : round2(50);
   cart.taxPrice = 0;
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
 
@@ -95,9 +95,11 @@ export default function PlaceOrderScreen() {
               <Card.Title>Envío</Card.Title>
               <Card.Text>
                 <strong>Nombre:</strong> {cart.shippingAddress.fullName} <br />
-                <strong>Dirección: </strong> {cart.shippingAddress.address},
-                {cart.shippingAddress.city}, {cart.shippingAddress.postalCode},
-                {cart.shippingAddress.country}
+                <strong>Dirección: </strong> {cart.shippingAddress.address}, {' '}
+                {cart.shippingAddress.city}, {' '}
+                {cart.shippingAddress.country}.
+                <br />
+                <strong>Celular: </strong> {cart.shippingAddress.celular}
               </Card.Text>
               <Link style={{color: '#EA4C89', textDecoration: 'none'}} to="/shipping">Editar</Link>
             </Card.Body>
@@ -157,12 +159,12 @@ export default function PlaceOrderScreen() {
                     <Col>${cart.shippingPrice.toFixed(2)}</Col>
                   </Row>
                 </ListGroup.Item>
-                <ListGroup.Item>
+                {/* <ListGroup.Item>
                   <Row>
                     <Col>Impuestos</Col>
                     <Col>${cart.taxPrice.toFixed(2)}</Col>
                   </Row>
-                </ListGroup.Item>
+                </ListGroup.Item> */}
                 <ListGroup.Item>
                   <Row>
                     <Col>

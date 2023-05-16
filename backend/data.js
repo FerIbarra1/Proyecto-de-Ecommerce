@@ -18,7 +18,7 @@ const data = {
       image: '/images/p1.jpg', // 679px × 829px
       price: 1,
       countInStock: 10,
-      brand: 'Nike',
+      brand: 'Prueba',
       rating: 4.5,
       numReviews: 10,
       description: 'Esto es una Prueba',

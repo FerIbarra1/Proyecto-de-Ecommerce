@@ -75,7 +75,7 @@ export default function ProductEditScreen() {
         setImage(data.image);
         setImages(data.images);
         setCategory(data.category);
-        setCountInStock(data.countInStock);
+        setCountInStock(999999999999);
         setBrand(data.brand);
         setDescription(data.description);
         dispatch({ type: 'FETCH_SUCCESS' });
@@ -114,7 +114,7 @@ export default function ProductEditScreen() {
       dispatch({
         type: 'UPDATE_SUCCESS',
       });
-      toast.success('Producto Actualizado con Éxito');
+      toast.success('Producto Creado con Éxito');
       navigate('/admin/products');
     } catch (err) {
       toast.error(getError(err));
@@ -191,16 +191,16 @@ export default function ProductEditScreen() {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="image">
-            <Form.Label>Archivo de Imágen</Form.Label>
+            {/* <Form.Label>Archivo de Imágen</Form.Label>
             <Form.Control
               value={image}
               onChange={(e) => setImage(e.target.value)}
               required
-            />
+            /> */}
           </Form.Group>
           <Form.Group className="mb-3" controlId="imageFile">
             <Form.Label>Cargar Imágen</Form.Label>
-            <Form.Control type="file" onChange={uploadFileHandler} />
+            <Form.Control type="file" accept="image/*" onChange={uploadFileHandler} />
             {loadingUpload && <LoadingBox></LoadingBox>}
           </Form.Group>
 
@@ -221,7 +221,7 @@ export default function ProductEditScreen() {
           <Form.Group className="mb-3" controlId="additionalImageFile">
             <Form.Label>Cargar Imágenes Adicionales</Form.Label>
             <Form.Control
-              type="file"
+              type="file" accept="image/*"
               onChange={(e) => uploadFileHandler(e, true)}
             />
             {loadingUpload && <LoadingBox></LoadingBox>}
@@ -244,12 +244,12 @@ export default function ProductEditScreen() {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="countInStock">
-            <Form.Label>Cantidad de Stock</Form.Label>
+            {/* <Form.Label>Cantidad de Stock</Form.Label>
             <Form.Control
               value={countInStock}
               onChange={(e) => setCountInStock(e.target.value)}
               required
-            />
+            /> */}
           </Form.Group>
           <Form.Group className="mb-3" controlId="description">
             <Form.Label>Descripción</Form.Label>

@@ -96,7 +96,6 @@ export default function ProductListScreen() {
   }, [page, userInfo, successDelete]);
 
   const createHandler = async () => {
-    if (window.confirm('¿Estas Seguro de Crear un Nuevo Producto?')) {
       try {
         dispatch({ type: 'CREATE_REQUEST' });
         const { data } = await axios.post(
@@ -106,7 +105,7 @@ export default function ProductListScreen() {
             headers: { Authorization: `Bearer ${userInfo.token}` },
           }
         );
-        toast.success('Producto Creado Éxitosamente');
+        // toast.success('Producto Creado Éxitosamente');
         dispatch({ type: 'CREATE_SUCCESS' });
         navigate(`/admin/product/${data.product._id}`);
       } catch (err) {
@@ -115,7 +114,6 @@ export default function ProductListScreen() {
           type: 'CREATE_FAIL',
         });
       }
-    }
   };
 
   const deleteHandler = async (product) => {

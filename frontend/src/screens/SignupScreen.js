@@ -17,7 +17,9 @@ export default function SignupScreen() {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -25,7 +27,7 @@ export default function SignupScreen() {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      toast.error('Passwords do not match');
+      toast.error('Las contraseñas no coinciden');
       return;
     }
     try {
@@ -48,6 +50,29 @@ export default function SignupScreen() {
     }
   }, [navigate, redirect, userInfo]);
 
+  const validatePassword = () => {
+    if (password.trim() === '') {
+      setPasswordError('El campo de contraseña no puede estar vacío.');
+    } else if (password.length < 6) {
+      setPasswordError('La contraseña debe tener al menos 6 caracteres.');
+    } else if (password.length > 20) {
+      setPasswordError('La contraseña no puede tener más de 20 caracteres.');
+    } else {
+      setPasswordError('');
+    }
+  };
+
+  const validateEmail = (value) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (value.trim() === '') {
+      setEmailError('El campo de correo electrónico no puede estar vacío.');
+    } else if (!emailRegex.test(value)) {
+      setEmailError('Ingrese un correo electrónico válido.');
+    } else {
+      setEmailError('');
+    }
+  };
+
   return (
     <Container className="small-container">
       <Helmet>
@@ -65,16 +90,24 @@ export default function SignupScreen() {
           <Form.Control
             type="email"
             required
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value)
+              validateEmail(e.target.value);
+            }}
           />
+           {emailError && <p className="error">{emailError}</p>}
         </Form.Group>
         <Form.Group className="mb-3" controlId="password">
           <Form.Label>Contraseña</Form.Label>
           <Form.Control
             type="password"
             required
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value)
+              validatePassword(e.target.value);
+            }}
           />
+          {passwordError && <p className="error">{passwordError}</p>}
           <Form.Group className="mb-3" controlId="confirmPassword">
             <Form.Label>Confirmar Contraseña</Form.Label>
             <Form.Control
@@ -85,11 +118,11 @@ export default function SignupScreen() {
           </Form.Group>
         </Form.Group>
         <div className="mb-3">
-          <Button type="submit">Registrarse</Button>
+          <Button type="submit" disabled={!!passwordError || !!emailError}>Registrarse</Button>
         </div>
         <div className="mb-3">
           ¿Ya Tienes una Cuenta?{' '}
-          <Link style={{color: "#EA4C89"}} to={`/signin?redirect=${redirect}`}>Registrarse</Link>
+          <Link style={{ color: "#EA4C89" }} to={`/signin?redirect=${redirect}`}>Registrarse</Link>
         </div>
       </Form>
     </Container>

@@ -157,6 +157,7 @@ export default function OrderScreen() {
         });
         paypalDispatch({ type: 'setLoadingStatus', value: 'pending' });
       };
+      
       loadPaypalScript();
     }
   }, [
@@ -204,9 +205,11 @@ export default function OrderScreen() {
               <Card.Title>Envío</Card.Title>
               <Card.Text>
                 <strong>Nombre:</strong> {order.shippingAddress.fullName} <br />
-                <strong>Dirección: </strong> {order.shippingAddress.address},
-                {order.shippingAddress.city}, {order.shippingAddress.postalCode}
-                ,{order.shippingAddress.country}
+                <strong>Dirección: </strong> {order.shippingAddress.address}, {' '}
+                {order.shippingAddress.city}  
+                ,{' '}{order.shippingAddress.country}.
+                <br />
+                <strong>Celular: </strong> {order.shippingAddress.celular}
                 &nbsp;
                 {order.shippingAddress.location &&
                   order.shippingAddress.location.lat && (
@@ -286,12 +289,12 @@ export default function OrderScreen() {
                     <Col>${order.shippingPrice.toFixed(2)}</Col>
                   </Row>
                 </ListGroup.Item>
-                <ListGroup.Item>
+                {/* <ListGroup.Item>
                   <Row>
                     <Col>Impuestos</Col>
                     <Col>${order.taxPrice.toFixed(2)}</Col>
                   </Row>
-                </ListGroup.Item>
+                </ListGroup.Item> */}
                 <ListGroup.Item>
                   <Row>
                     <Col>
