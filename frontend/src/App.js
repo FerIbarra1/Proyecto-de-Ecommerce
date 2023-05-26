@@ -86,9 +86,9 @@ function App() {
                 <i className="fas fa-bars"></i>
               </Button>
 
-              <LinkContainer to="/">
+              <LinkContainer to="/" style={{paddingLeft:14}} >
                 <Navbar.Brand>
-                <img alt="" src='/images/logo3.png' width="120" height="120" className="d-inline-block align-top" />
+                <img  alt="" src='/images/logo3.png' width="120" height="120" className="d-inline-block align-top" />
                  </Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
