@@ -124,7 +124,7 @@ export default function UserEditScreen() {
             className="mb-3"
             type="checkbox"
             id="isAdmin"
-            label="isAdmin"
+            label="Es Administrador"
             checked={isAdmin}
             onChange={(e) => setIsAdmin(e.target.checked)}
           />
