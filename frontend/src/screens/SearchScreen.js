@@ -51,22 +51,22 @@ const prices = [
 
 export const ratings = [
   {
-    name: '4 Estrellas y Más',
+    name: '4 Estrellas o Más',
     rating: 4,
   },
 
   {
-    name: '3 Estrellas y Más',
+    name: '3 Estrellas o Más',
     rating: 3,
   },
 
   {
-    name: '2 Estrellas y Más',
+    name: '2 Estrellas o Más',
     rating: 2,
   },
 
   {
-    name: '1 Estrella y Más',
+    name: '1 Estrella o Más',
     rating: 1,
   },
 ];
@@ -191,7 +191,7 @@ export default function SearchScreen() {
                     to={getFilterUrl({ rating: r.rating })}
                     className={`${r.rating}` === `${rating}` ? 'text-bold' : ''}
                   >
-                    <Rating caption={' & Más'} rating={r.rating}></Rating>
+                    <Rating caption={' o Más'} rating={r.rating}></Rating>
                   </Link>
                 </li>
               ))}
