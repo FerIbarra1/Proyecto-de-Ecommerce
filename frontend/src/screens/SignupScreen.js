@@ -95,7 +95,7 @@ export default function SignupScreen() {
               validateEmail(e.target.value);
             }}
           />
-          {emailError && <p className="error">{emailError}</p>}
+          {emailError && <Form.Text style={{color: 'red'}}>{emailError}</Form.Text>}
         </Form.Group>
         <Form.Group className="mb-3" controlId="password">
           <Form.Label>Contraseña</Form.Label>
@@ -107,7 +107,7 @@ export default function SignupScreen() {
               validatePassword(e.target.value);
             }}
           />
-          {passwordError && <p className="error">{passwordError}</p>}
+          {passwordError && <Form.Text style={{color: 'red'}}>{passwordError}</Form.Text>}
           <Form.Group className="mb-3" controlId="confirmPassword">
             <Form.Label>Confirmar Contraseña</Form.Label>
             <Form.Control
