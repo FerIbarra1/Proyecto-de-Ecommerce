@@ -87,7 +87,7 @@ export default function ShippingAddressScreen() {
               onChange={(e) => setAddress(e.target.value)}
               required
             />
-            <p>Asegúrese que la dirección sea en Hermosillo, Sonora.</p>
+            <Form.Text>Asegúrese que la dirección sea en Hermosillo, Sonora.</Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="celular">
             <Form.Label>Celular</Form.Label>
@@ -97,6 +97,7 @@ export default function ShippingAddressScreen() {
               required
             />
           </Form.Group>
+          <Form.Text><strong>Aviso: </strong>Los productos seran entregados 2 dias despues de su compra, en un horario de 8:00am a 1:00pm</Form.Text>
           <Form.Group className="mb-3" controlId="city">
             {/* <Form.Label>Ciudad</Form.Label>
             <Form.Control

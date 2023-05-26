@@ -157,7 +157,7 @@ export default function OrderScreen() {
         });
         paypalDispatch({ type: 'setLoadingStatus', value: 'pending' });
       };
-      
+
       loadPaypalScript();
     }
   }, [
@@ -188,6 +188,26 @@ export default function OrderScreen() {
     }
   }
 
+  async function payOrderHandler() {
+    try {
+      dispatch({ type: 'PAY_REQUEST' });
+      const { data } = await axios.put(
+        `/api/orders/${order._id}/pay`,
+        {},
+        {
+          headers: { authorization: `Bearer ${userInfo.token}` },
+        }
+      );
+      dispatch({ type: 'PAY_SUCCESS', payload: data });
+      toast.success('Pedido Pagado');
+    } catch (err) {
+      toast.error(getError(err));
+      dispatch({ type: 'DELIVER_FAIL' });
+    }
+  }
+
+  console.log(order.paymentMethod)
+
   return loading ? (
     <LoadingBox></LoadingBox>
   ) : error ? (
@@ -206,7 +226,7 @@ export default function OrderScreen() {
               <Card.Text>
                 <strong>Nombre:</strong> {order.shippingAddress.fullName} <br />
                 <strong>Dirección: </strong> {order.shippingAddress.address}, {' '}
-                {order.shippingAddress.city}  
+                {order.shippingAddress.city}
                 ,{' '}{order.shippingAddress.country}.
                 <br />
                 <strong>Celular: </strong> {order.shippingAddress.celular}
@@ -259,7 +279,7 @@ export default function OrderScreen() {
                           alt={item.name}
                           className="img-fluid rounded img-thumbnail"
                         ></img>{' '}
-                        <Link style={{color: 'black', textDecoration: 'none'}} to={`/product/${item.slug}`}>{item.name}</Link>
+                        <Link style={{ color: 'black', textDecoration: 'none' }} to={`/product/${item.slug}`}>{item.name}</Link>
                       </Col>
                       <Col md={3}>
                         <span>{item.quantity}</span>
@@ -305,7 +325,7 @@ export default function OrderScreen() {
                     </Col>
                   </Row>
                 </ListGroup.Item>
-                {!order.isPaid && (
+                {!order.isPaid && order.paymentMethod && order.paymentMethod === 'PayPal' && (
                   <ListGroup.Item>
                     {isPending ? (
                       <LoadingBox />
@@ -319,6 +339,34 @@ export default function OrderScreen() {
                       </div>
                     )}
                     {loadingPay && <LoadingBox></LoadingBox>}
+                  </ListGroup.Item>
+                )}
+                {!order.isPaid && order.paymentMethod && order.paymentMethod === 'Transferencia' && (
+                  <Card.Body>
+                    <Card.Title style={{ paddingTop: 10 }}>Informacion de Transferencia</Card.Title>
+                    <Card.Text>
+                      <strong>Nombre del Titular:</strong> Lorena Guadalupe Meneses
+                      <br/>
+                      <strong>Banco:</strong> BBVA
+                      <br/>
+                      <strong>Numero de Tarjeta:</strong> 4152 3138 6549 7973
+                      <br/>
+                      <strong>Concepto:</strong> Nombre de la persona que hizo el pedido
+                      <br/>
+                      <br/>
+                      <strong>Atencion:</strong> El pago puede tardar en verse reflejado, para que sea mas rapido su verificacion de pago puede enviar una captura del deposito a nuestro Whatsapp: 6621633503
+                    </Card.Text>
+                  </Card.Body>
+
+                )}
+                {userInfo.isAdmin && !order.isPaid && (
+                  <ListGroup.Item>
+                    {loadingDeliver && <LoadingBox></LoadingBox>}
+                    <div className="d-grid">
+                      <Button type="button" onClick={payOrderHandler}>
+                        Pedido Pagado
+                      </Button>
+                    </div>
                   </ListGroup.Item>
                 )}
                 {userInfo.isAdmin && order.isPaid && !order.isDelivered && (

@@ -52,10 +52,10 @@ export default function SignupScreen() {
 
   const validatePassword = () => {
     if (password.trim() === '') {
-      setPasswordError('El campo de contraseña no puede estar vacío.');
-    } else if (password.length < 6) {
       setPasswordError('La contraseña debe tener al menos 6 caracteres.');
-    } else if (password.length > 20) {
+    } else if (password.length < 5) {
+      setPasswordError('La contraseña debe tener al menos 6 caracteres.');
+    } else if (password.length > 19) {
       setPasswordError('La contraseña no puede tener más de 20 caracteres.');
     } else {
       setPasswordError('');
@@ -95,7 +95,7 @@ export default function SignupScreen() {
               validateEmail(e.target.value);
             }}
           />
-           {emailError && <p className="error">{emailError}</p>}
+          {emailError && <p className="error">{emailError}</p>}
         </Form.Group>
         <Form.Group className="mb-3" controlId="password">
           <Form.Label>Contraseña</Form.Label>
