@@ -200,7 +200,7 @@ export default function SearchScreen() {
                   to={getFilterUrl({ rating: 'all' })}
                   className={rating === 'all' ? 'text-bold' : ''}
                 >
-                  <Rating caption={' & Más'} rating={0}></Rating>
+                  <Rating caption={' o Más'} rating={0}></Rating>
                 </Link>
               </li>
             </ul>
