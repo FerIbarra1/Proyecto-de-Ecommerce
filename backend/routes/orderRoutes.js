@@ -109,8 +109,9 @@ orderRouter.put(
   expressAsyncHandler(async (req, res) => {
     const order = await Order.findById(req.params.id);
     if (order) {
+      var fechaHoraMST = new Date(Date.now() - (7 * 3600000));
       order.isDelivered = true;
-      order.deliveredAt = Date.now();
+      order.deliveredAt = fechaHoraMST;
       await order.save();
       res.send({ message: 'Pedido Entregado' });
     } else {
@@ -128,8 +129,9 @@ orderRouter.put(
       'email name'
     );
     if (order) {
+      var fechaHoraMST = new Date(Date.now() - (7 * 3600000));
       order.isPaid = true;
-      order.paidAt = Date.now();
+      order.paidAt = fechaHoraMST;
       order.paymentResult = {
         id: req.body.id,
         status: req.body.status,
