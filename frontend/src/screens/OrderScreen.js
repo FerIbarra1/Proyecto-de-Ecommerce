@@ -243,7 +243,7 @@ export default function OrderScreen() {
               </Card.Text>
               {order.isDelivered ? (
                 <MessageBox variant="success">
-                  Entregado en {order.deliveredAt}
+                  Entregado el {order.deliveredAt.substring(0, 10)} a las {order.deliveredAt.substring(11, 16)}
                 </MessageBox>
               ) : (
                 <MessageBox variant="danger">No Entregado</MessageBox>
@@ -258,7 +258,7 @@ export default function OrderScreen() {
               </Card.Text>
               {order.isPaid ? (
                 <MessageBox variant="success">
-                  Pagado en {order.paidAt}
+                  Pagado el {order.paidAt.substring(0, 10)} a las {order.paidAt.substring(11, 16)}
                 </MessageBox>
               ) : (
                 <MessageBox variant="danger">No Pagado</MessageBox>
