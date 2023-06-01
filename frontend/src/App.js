@@ -121,7 +121,7 @@ function App() {
                       </Link>
                     </NavDropdown>
                   ) : (
-                    <Link className="nav-link" to="/signin">
+                    <Link className="nav-link" to="/signin" style={{color: 'white'}}>
                       Iniciar Sesión
                     </Link>
                   )}
