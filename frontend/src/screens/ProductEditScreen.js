@@ -75,7 +75,7 @@ export default function ProductEditScreen() {
         setImage(data.image);
         setImages(data.images);
         setCategory(data.category);
-        setCountInStock(999999999999);
+        setCountInStock(data.countInStock);
         setBrand(data.brand);
         setDescription(data.description);
         dispatch({ type: 'FETCH_SUCCESS' });
@@ -244,12 +244,12 @@ export default function ProductEditScreen() {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="countInStock">
-            {/* <Form.Label>Cantidad de Stock</Form.Label>
+            <Form.Label>Cantidad de Stock</Form.Label>
             <Form.Control
               value={countInStock}
               onChange={(e) => setCountInStock(e.target.value)}
               required
-            /> */}
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="description">
             <Form.Label>Descripción</Form.Label>

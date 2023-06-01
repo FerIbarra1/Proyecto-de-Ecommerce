@@ -77,7 +77,7 @@ function App() {
       >
         <ToastContainer position="bottom-center" limit={1} />
         <header>
-          <Navbar style={{backgroundColor: '#FFEBCD', borderBottomLeftRadius: '10px', borderBottomRightRadius: '10px', borderBottom: 'solid' }}>
+          <Navbar style={{backgroundColor: '#1b1b1b'}}>
             <Container>
               <Button
                 variant="dark"
@@ -88,14 +88,14 @@ function App() {
 
               <LinkContainer to="/" style={{paddingLeft:14}} >
                 <Navbar.Brand>
-                <img  alt="" src='/images/logo3.png' width="120" height="120" className="d-inline-block align-top" />
+                <img  alt="" src='/images/logo4.png' width="120" height="120" className="d-inline-block align-top" />
                  </Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <SearchBox />
                 <Nav className="me-auto  w-100  justify-content-end">
-                  <Link to="/cart" className="nav-link">
+                  <Link to="/cart" className="nav-link"  style={{color: 'white'}}>
                     Carrito {' '}
                     {cart.cartItems.length > 0 && (
                       <Badge pill bg="danger">
@@ -104,7 +104,7 @@ function App() {
                     )}
                   </Link>
                   {userInfo ? (
-                    <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
+                    <NavDropdown title= <span  style={{color: 'white'}}>{userInfo.name}</span> id="basic-nav-dropdown">
                       <LinkContainer to="/profile">
                         <NavDropdown.Item>Perfil del Usuario</NavDropdown.Item>
                       </LinkContainer>
@@ -126,7 +126,7 @@ function App() {
                     </Link>
                   )}
                   {userInfo && userInfo.isAdmin && (
-                    <NavDropdown title="Admin" id="admin-nav-dropdown">
+                    <NavDropdown title=<span  style={{color: 'white'}}>Admin</span> id="admin-nav-dropdown">
                       <LinkContainer to="/admin/dashboard">
                         <NavDropdown.Item>Panel de Ventas</NavDropdown.Item>
                       </LinkContainer>
@@ -158,12 +158,12 @@ function App() {
               <strong>Categorias</strong>
             </Nav.Item>
             {categories.map((category) => (
-              <Nav.Item style={{color: '#EA4C89'}} key={category}>
-                <LinkContainer style={{color: '#EA4C89'}}
+              <Nav.Item style={{color: '#0038ff'}} key={category}>
+                <LinkContainer style={{color: '#0038ff'}}
                   to={{ pathname: '/search', search: `category=${category}` }}
                   onClick={() => setSidebarIsOpen(false)}
                 >
-                  <Nav.Link style={{color: '#EA4C89'}}>{category}</Nav.Link>
+                  <Nav.Link style={{color: '#0038ff'}}>{category}</Nav.Link>
                 </LinkContainer>
               </Nav.Item>
             ))}
@@ -279,7 +279,7 @@ function App() {
           </Container>
         </main>
         <footer>
-          <div className="text-center">Contacto: Tel. 6621633503 - Lorena Meneses</div>
+          <div className="text-center">Contacto: Cel. 6621633503 - Julián Uriel Melendrez Meneses</div>
         </footer>
       </div>
     </BrowserRouter>

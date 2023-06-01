@@ -345,11 +345,11 @@ export default function OrderScreen() {
                   <Card.Body>
                     <Card.Title style={{ paddingTop: 10 }}>Informacion de Transferencia</Card.Title>
                     <Card.Text>
-                      <strong>Nombre del Titular:</strong> Lorena Guadalupe Meneses
+                      <strong>Nombre del Titular:</strong> Julián Uriel Melendrez Meneses
                       <br/>
                       <strong>Banco:</strong> BBVA
                       <br/>
-                      <strong>Numero de Tarjeta:</strong> 4152 3138 6549 7973
+                      <strong>Numero de Tarjeta:</strong> 4152 3140 8931 5462
                       <br/>
                       <strong>Concepto:</strong> Nombre de la persona que hizo el pedido
                       <br/>
