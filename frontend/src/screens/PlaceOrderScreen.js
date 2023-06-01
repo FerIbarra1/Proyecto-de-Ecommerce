@@ -101,7 +101,7 @@ export default function PlaceOrderScreen() {
                 <br />
                 <strong>Celular: </strong> {cart.shippingAddress.celular}
               </Card.Text>
-              <Link style={{color: '#EA4C89', textDecoration: 'none'}} to="/shipping">Editar</Link>
+              <Link style={{color: '#0038ff', textDecoration: 'none'}} to="/shipping">Editar</Link>
             </Card.Body>
           </Card>
 
@@ -111,7 +111,7 @@ export default function PlaceOrderScreen() {
               <Card.Text>
                 <strong>Metodo:</strong> {cart.paymentMethod}
               </Card.Text>
-              <Link style={{color: '#EA4C89', textDecoration: 'none'}} to="/payment">Editar</Link>
+              <Link style={{color: '#0038ff', textDecoration: 'none'}} to="/payment">Editar</Link>
             </Card.Body>
           </Card>
 
@@ -138,7 +138,7 @@ export default function PlaceOrderScreen() {
                   </ListGroup.Item>
                 ))}
               </ListGroup>
-              <Link style={{color: '#EA4C89', textDecoration: 'none'}} to="/cart">Editar</Link>
+              <Link style={{color: '#0038ff', textDecoration: 'none'}} to="/cart">Editar</Link>
             </Card.Body>
           </Card>
         </Col>
