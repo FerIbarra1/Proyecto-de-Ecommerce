@@ -40,6 +40,7 @@ import ResetPasswordScreen from './screens/ResetPasswordScreen';
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { fullBox, cart, userInfo } = state;
+  
 
   const signoutHandler = () => {
     ctxDispatch({ type: 'USER_SIGNOUT' });

@@ -116,6 +116,7 @@ export default function ProductListScreen() {
       }
   };
 
+  
   const deleteHandler = async (product) => {
     if (window.confirm('¿Estas Seguro Que Deseas Eliminar el Producto?')) {
       try {

@@ -47,6 +47,7 @@ export default function PaymentMethodScreen() {
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
           </div>
+          
           <div className="mb-3">
             <Form.Check
               type="radio"

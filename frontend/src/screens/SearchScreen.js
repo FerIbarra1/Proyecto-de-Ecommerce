@@ -117,6 +117,7 @@ export default function SearchScreen() {
     };
     fetchCategories();
   }, [dispatch]);
+  
 
   const getFilterUrl = (filter, skipPathname) => {
     const filterPage = filter.page || page;

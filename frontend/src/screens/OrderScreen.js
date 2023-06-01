@@ -205,6 +205,7 @@ export default function OrderScreen() {
       dispatch({ type: 'DELIVER_FAIL' });
     }
   }
+  
 
   console.log(order.paymentMethod)
 

@@ -21,6 +21,7 @@ export default function MapScreen() {
   const [googleApiKey, setGoogleApiKey] = useState('');
   const [center, setCenter] = useState(defaultLocation);
   const [location, setLocation] = useState(center);
+  
 
   const mapRef = useRef(null);
   const placeRef = useRef(null);

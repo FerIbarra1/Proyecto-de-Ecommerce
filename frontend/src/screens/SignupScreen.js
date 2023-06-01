@@ -72,6 +72,7 @@ export default function SignupScreen() {
       setEmailError('');
     }
   };
+  
 
   return (
     <Container className="small-container">

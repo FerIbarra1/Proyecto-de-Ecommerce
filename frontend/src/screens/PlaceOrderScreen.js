@@ -80,6 +80,7 @@ export default function PlaceOrderScreen() {
       navigate('/payment');
     }
   }, [cart, navigate]);
+  
 
   return (
     <div>

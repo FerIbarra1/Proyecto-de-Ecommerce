@@ -99,6 +99,7 @@ function ProductScreen() {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         }
       );
+      
 
       dispatch({
         type: 'CREATE_SUCCESS',

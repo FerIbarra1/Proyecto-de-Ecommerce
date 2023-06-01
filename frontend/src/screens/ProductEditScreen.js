@@ -203,6 +203,7 @@ export default function ProductEditScreen() {
             <Form.Control type="file" accept="image/*" onChange={uploadFileHandler} />
             {loadingUpload && <LoadingBox></LoadingBox>}
           </Form.Group>
+          
 
           <Form.Group className="mb-3" controlId="additionalImage">
             <Form.Label>Imágenes Adicionales</Form.Label>

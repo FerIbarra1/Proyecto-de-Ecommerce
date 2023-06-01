@@ -11,6 +11,7 @@ import { getError } from '../utils';
 
 export default function ForgetPasswordScreen() {
   const navigate = useNavigate();
+  
 
   const [email, setEmail] = useState('');
 
