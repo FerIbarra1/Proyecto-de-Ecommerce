@@ -114,6 +114,7 @@ export default function SignupScreen() {
               type="password"
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
+              
             />
           </Form.Group>
         </Form.Group>
@@ -122,7 +123,7 @@ export default function SignupScreen() {
         </div>
         <div className="mb-3">
           ¿Ya Tienes una Cuenta?{' '}
-          <Link style={{ color: "#EA4C89" }} to={`/signin?redirect=${redirect}`}>Registrarse</Link>
+          <Link style={{ color: "#0038ff" }} to={`/signin?redirect=${redirect}`}>Registrarse</Link>
         </div>
       </Form>
     </Container>
