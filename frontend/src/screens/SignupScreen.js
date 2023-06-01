@@ -114,6 +114,7 @@ export default function SignupScreen() {
               type="password"
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
+              
             />
           </Form.Group>
         </Form.Group>
