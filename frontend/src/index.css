@@ -15,21 +15,21 @@ main {
 }
 .btn-primary,
 .btn-outline-primary {
-  background-color: #0038ff;
+  background-color: #ee4988;
   color: white;
   border: 2px solid var(--black);
 }
 .btn-outline-primary:hover{
-  background-color: #4a72ff;
+  background-color: #EC78A5;
 }
 .btn-primary:hover{
-  background-color: #4a72ff;
+  background-color: #EC78A5;
 }
 .btn-outline-primary:disabled{
-  background-color: #4a72ff;
+  background-color: #EC78A5;
 }
 .btn-primary:disabled{
-  background-color: #4a72ff;
+  background-color: #EC78A5;
 }
 .products {
   display: flex;
@@ -67,8 +67,8 @@ main {
   color: #a0a0a0;
 }
 .checkout-steps > div.active {
-  border-bottom: 0.2rem solid #0038ff;
-  color: #0038ff;
+  border-bottom: 0.2rem solid #ee4988;
+  color: #ee4988;
 }
 
 /* sidebar */

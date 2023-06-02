@@ -124,7 +124,7 @@ export default function SignupScreen() {
         </div>
         <div className="mb-3">
           ¿Ya Tienes una Cuenta?{' '}
-          <Link style={{ color: "#0038ff" }} to={`/signin?redirect=${redirect}`}>Registrarse</Link>
+          <Link style={{ color: "#ee4988" }} to={`/signin?redirect=${redirect}`}>Registrarse</Link>
         </div>
       </Form>
     </Container>

@@ -70,10 +70,10 @@ export default function SigninScreen() {
         </div>
         <div className="mb-3">
           ¿Cliente Nuevo?{' '}
-          <Link style={{color: "#0038ff"}} to={`/signup?redirect=${redirect}`}>Crea tu Cuenta</Link>
+          <Link style={{color: "#ee4988"}} to={`/signup?redirect=${redirect}`}>Crea tu Cuenta</Link>
         </div>
         <div className="mb-3">
-          ¿Olvidaste la Contraseña? <Link style={{color: "#0038ff"}} to={`/forget-password`}>Restablecer la Contraseña</Link>
+          ¿Olvidaste la Contraseña? <Link style={{color: "#ee4988"}} to={`/forget-password`}>Restablecer la Contraseña</Link>
         </div>
       </Form>
     </Container>

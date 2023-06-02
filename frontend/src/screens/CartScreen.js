@@ -112,7 +112,7 @@ export default function CartScreen() {
                 <ListGroup.Item>
                   <div className="d-grid">
                     <Button
-                      style={{backgroundColor: '#0038ff'}}
+                      style={{backgroundColor: '#ee4988'}}
                       type="button"
                       variant="primary"
                       onClick={checkoutHandler}

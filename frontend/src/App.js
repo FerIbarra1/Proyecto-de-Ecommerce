@@ -78,7 +78,7 @@ function App() {
       >
         <ToastContainer position="bottom-center" limit={1} />
         <header>
-          <Navbar style={{backgroundColor: '#1b1b1b'}}>
+          <Navbar style={{backgroundColor: '#ffecce', borderBottomLeftRadius: 15, borderBottomRightRadius: 15}}>
             <Container>
               <Button
                 variant="dark"
@@ -89,14 +89,14 @@ function App() {
 
               <LinkContainer to="/" style={{paddingLeft:14}} >
                 <Navbar.Brand>
-                <img  alt="" src='/images/logo4.png' width="120" height="120" className="d-inline-block align-top" />
+                <img  alt="" src='/images/logo3.png' width="120" height="120" className="d-inline-block align-top" />
                  </Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <SearchBox />
                 <Nav className="me-auto  w-100  justify-content-end">
-                  <Link to="/cart" className="nav-link"  style={{color: 'white'}}>
+                  <Link to="/cart" className="nav-link">
                     Carrito {' '}
                     {cart.cartItems.length > 0 && (
                       <Badge pill bg="danger">
@@ -105,7 +105,7 @@ function App() {
                     )}
                   </Link>
                   {userInfo ? (
-                    <NavDropdown title= <span  style={{color: 'white'}}>{userInfo.name}</span> id="basic-nav-dropdown">
+                    <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
                       <LinkContainer to="/profile">
                         <NavDropdown.Item>Perfil del Usuario</NavDropdown.Item>
                       </LinkContainer>
@@ -122,12 +122,12 @@ function App() {
                       </Link>
                     </NavDropdown>
                   ) : (
-                    <Link className="nav-link" to="/signin" style={{color: 'white'}}>
+                    <Link className="nav-link" to="/signin">
                       Iniciar Sesión
                     </Link>
                   )}
                   {userInfo && userInfo.isAdmin && (
-                    <NavDropdown title=<span  style={{color: 'white'}}>Admin</span> id="admin-nav-dropdown">
+                    <NavDropdown title="Admin" id="admin-nav-dropdown">
                       <LinkContainer to="/admin/dashboard">
                         <NavDropdown.Item>Panel de Ventas</NavDropdown.Item>
                       </LinkContainer>
@@ -159,12 +159,12 @@ function App() {
               <strong>Categorias</strong>
             </Nav.Item>
             {categories.map((category) => (
-              <Nav.Item style={{color: '#0038ff'}} key={category}>
-                <LinkContainer style={{color: '#0038ff'}}
+              <Nav.Item style={{color: '#ee4988'}} key={category}>
+                <LinkContainer style={{color: '#ee4988'}}
                   to={{ pathname: '/search', search: `category=${category}` }}
                   onClick={() => setSidebarIsOpen(false)}
                 >
-                  <Nav.Link style={{color: '#0038ff'}}>{category}</Nav.Link>
+                  <Nav.Link style={{color: '#ee4988'}}>{category}</Nav.Link>
                 </LinkContainer>
               </Nav.Item>
             ))}
@@ -280,7 +280,7 @@ function App() {
           </Container>
         </main>
         <footer>
-          <div className="text-center">Contacto: Cel. 6621633503 - Julián Uriel Melendrez Meneses</div>
+          <div className="text-center">Contacto: Cel. 6621633503 - Lorena Meneses</div>
         </footer>
       </div>
     </BrowserRouter>
